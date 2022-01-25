@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Repaso PI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objetivos del Proyecto
 
-## Available Scripts
+- Construir una App utlizando React, Redux, Node y Sequelize
 
-In the project directory, you can run:
+## Comenzando
 
-### `npm start`
+1. Forkear el repositorio para tener una copia del mismo en sus cuentas
+2. Clonar el repositorio en sus computadoras para comenzar a trabajar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**IMPORTANTE**: Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Actualmente las versiónes necesarias son:
 
-### `npm test`
+Node: 12.18.3 o mayor
+NPM: 6.14.16 o mayor
+Para verificar que versión tienen instalada:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+node -v
 
-### `npm run build`
+npm -v
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## BoilerPlate
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+En `api` crear un archivo llamado: `.env` que tenga la siguiente forma:
 
-### `npm run eject`
+```
+DB_USER=usuariodepostgres
+DB_PASSWORD=passwordDePostgres
+DB_HOST=localhost
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Adicionalmente será necesario que creen desde psql una base de datos con el nombre **pirepaso**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+El contenido de `client` fue creado usando: Create React App.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Enunciado
 
-## Learn More
+# Rick & Morty App
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+En este ejercicio vamos a crear una APP que utilice la API de [Rick y Morty](https://rickandmortyapi.com//). Vamos a crear nuestra app utilizando **REACT** y **REDUX**.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Con tu App podremos:
 
-### Code Splitting
+- Listar los personajes: En la pàgina principal, mostrar solo: -id y -title de los personajes
+- Al hacer click en cada personaje: mostrar -body y los episodios en los que aparece.
+- Se debe poder agregar nuevos episodios a cada personaje
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Backend
 
-### Analyzing the Bundle Size
+El backend tendrá los siquientes modelos:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Personaje:
 
-### Making a Progressive Web App
+- id
+- name
+- image
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Category:
 
-### Advanced Configuration
+- id
+- name
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+User:
 
-### Deployment
+- id
+- name
+- username
+- email
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+La relación de usuario con post es de 1 a n: ya que un mismo usuario puede escribir varios post. La relación de post con categorías es de n a n, ya que un post puede tener varias categorías asociadas y las categorías pueden ser compartidas por varios posts.
+# Project-Rick-and-Morty
