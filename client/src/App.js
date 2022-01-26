@@ -2,7 +2,7 @@
 function App() {
   return (
     <div className="App">
-      Rick & Morti App
+      Rick y Morti App
     </div>
   );
 }
