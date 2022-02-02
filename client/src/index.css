@@ -1,5 +1,7 @@
 body{
-    background: url('https://imagenes.elpais.com/resizer/oumjZVAwTKapCwxE-NOaXumqtEM=/1960x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/Z6WN33YVLRCTPCATP7EAJ2ODLE.jpg');
-    background-repeat: no-repeat;
-      background-size: cover;
+ background: url('https://www.xtrafondos.com/wallpapers/resized/rick-and-morty-en-3d-8453.jpg?s=large');
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
+ font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

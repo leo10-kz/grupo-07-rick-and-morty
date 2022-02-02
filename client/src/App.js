@@ -12,7 +12,7 @@ function App() {
       <Searchbar/>
       <Routes>
           <Route path='/'  element={<Characters/>}  />
-          <Route path='character/:DetailId' element={<Details/>}  />
+          <Route path='character/:id' element={<Details/>}  />
           <Route path='/add' element={<Add/>} />
       </Routes>
     </div>
