@@ -6,6 +6,7 @@ import { Boton, Contenedor, Const } from './Characters-estylo';
 import  MenuBusqueda  from '../Menu/MenuBusqueda'
 import {  RightCircleFilled, LeftCircleFilled   } from '@ant-design/icons';
 
+
 export default function Characters() {
 
 const characters = useSelector(state => state.characters)
@@ -41,6 +42,8 @@ const prevPage = () =>{
       </Contenedor>
      <br />
      <br />
+
+     
         <ul>
           {characters.map(c =>{
             return(

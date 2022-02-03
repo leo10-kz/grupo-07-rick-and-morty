@@ -21,7 +21,7 @@ display: flex;
 justify-content: space-between;
 
 input{
-    padding: 8px 50px;
+    padding: 8px 80px 8px 10px ;
     border: 3px solid #ff0054;
     border-radius: 10px;
 }

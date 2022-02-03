@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const Box = styled.div`
  width:40%; 
- height: 100px;
+ height: 33px;
  margin:  4%;
  float: left;
  list-style: none;
@@ -17,7 +17,7 @@ display: grid;
 grid-template-columns: 2fr 2fr ;
 padding: 3px 15px 0;
 border-bottom: 5px solid  #8ac926;
-
+border-radius: 10px;
 `;
 
 export const Imagen =  styled.img`
@@ -29,7 +29,7 @@ border-radius: 10px;
 `;
 
 export const Link = styled(NavLink)`
-transition: 1s;
+transition: 0.5s;
  &:hover{
      transform: scale(1.5);
  }
