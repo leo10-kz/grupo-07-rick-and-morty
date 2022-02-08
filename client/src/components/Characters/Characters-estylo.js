@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Boton = styled.button`
 font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+cursor: pointer;
 padding: 5px 15px;
 margin:5px 10px;
 background: #ff6d00;
@@ -37,8 +38,21 @@ li{
 
 `;
 
+const Marcador = styled.p`
+display: flex;
+justify-content: center;
+max-width: 20px;
+margin: auto;
+padding: 8px;
+color: white;
+background-color:${props => props.variant === 1  ? '#ff6d00': '#ffc300' };
+border: 1px solid #ff6d00;
+border-radius: 30px 30px;
+`;
+
 export{
     Boton,
     Contenedor,
-    Const
+    Const,
+    Marcador
 }

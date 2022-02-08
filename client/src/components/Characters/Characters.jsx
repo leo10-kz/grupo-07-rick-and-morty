@@ -2,21 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import {  getCharacters2,getCharactersNext} from '../../accion';
 import Character from '../Character/Character'
-import { Boton, Contenedor, Const } from './Characters-estylo';
+import { Boton, Contenedor, Const, Marcador } from './Characters-estylo';
 import  MenuBusqueda  from '../Menu/MenuBusqueda'
-import {  RightCircleFilled, LeftCircleFilled   } from '@ant-design/icons';
+import {  RightCircleFilled, LeftCircleFilled  } from '@ant-design/icons';
 
 
 export default function Characters() {
 
 const characters = useSelector(state => state.characters)
 const dispatch = useDispatch() 
-const[page, setPage] = useState(1)
+let [page, setPage] = useState(1)
 
 
 useEffect(() =>{
     dispatch(getCharacters2())  
-    console.log('entro');
+    
 },[dispatch] )
 
 const nextPage = () =>{
@@ -24,7 +24,12 @@ const nextPage = () =>{
   setPage(page+1)
 }
 
+
+
 const prevPage = () =>{
+ if (page <= 1) {
+   return 1
+ }
   dispatch(getCharactersNext(page-1));
   setPage(page-1)
 }
@@ -38,11 +43,11 @@ const prevPage = () =>{
       <Contenedor>
       <Boton  onClick={() => prevPage()}><LeftCircleFilled   style={{fontSize: '20px'}}/></Boton>
       <MenuBusqueda/>
-      <Boton  onClick={() => nextPage()} > <RightCircleFilled  style={{fontSize: '20px'}}/> </Boton>
+      <Boton  onClick={() => nextPage()} ><RightCircleFilled  style={{fontSize: '20px'}}/></Boton>
       </Contenedor>
      <br />
      <br />
-
+      <Marcador variant ={page}>{page}</Marcador>
      
         <ul>
           {characters.map(c =>{
@@ -60,4 +65,4 @@ const prevPage = () =>{
   );
 }
 
-//dispatch( current => getCharactersNext(current +1))
+

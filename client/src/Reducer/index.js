@@ -12,10 +12,10 @@ const initialState = {
 const rootReducers = (state = initialState, action) => {
   switch (action.type) {
     case GET_CHARACTERS:
-      console.log("entro");
+      
       return {
         ...state,
-        characters: action.payload,
+        characters: action.payload
       };
     case GET_CHARACTERS_NEXT:
       return {

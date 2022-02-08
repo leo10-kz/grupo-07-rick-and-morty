@@ -3,10 +3,11 @@ import styled from "styled-components";
 
 const Contenedor = styled.div`
 max-width: 100%;
-margin: 0 80px;
+color: #201e1f;
+margin: 90px 80px;
 font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 .title{
-    font-size: 30px;
+    font-size: 25px;
 }
 
 h3{
@@ -14,8 +15,9 @@ h3{
 }
 
 img{
+    width: 20%;
     border: solid 5px #ff6d00;
-    border-radius: 10px;
+    border-radius: 45px 45px;
 }
 
 a{
